@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC10D40F29293C87002C4B91 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC10D40E29293C87002C4B91 /* LoginView.swift */; };
+		EC10D41229296018002C4B91 /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC10D41129296018002C4B91 /* TextFieldModifier.swift */; };
 		EC5D790629291D72000B99B5 /* OnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5D790529291D72000B99B5 /* OnBoardView.swift */; };
 		EC5D790829291F3E000B99B5 /* NormalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5D790729291F3E000B99B5 /* NormalButton.swift */; };
 		EC5D790A29292696000B99B5 /* OnBoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5D790929292696000B99B5 /* OnBoardModel.swift */; };
@@ -55,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC10D40E29293C87002C4B91 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		EC10D41129296018002C4B91 /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
 		EC5D790529291D72000B99B5 /* OnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardView.swift; sourceTree = "<group>"; };
 		EC5D790729291F3E000B99B5 /* NormalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalButton.swift; sourceTree = "<group>"; };
 		EC5D790929292696000B99B5 /* OnBoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardModel.swift; sourceTree = "<group>"; };
@@ -113,6 +117,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC10D40D29293C6A002C4B91 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				EC10D40E29293C87002C4B91 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		EC10D41029295FFF002C4B91 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				EC10D41129296018002C4B91 /* TextFieldModifier.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
 		EC5D790429291D5F000B99B5 /* OnBoard */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +204,7 @@
 		EC9DD7212928DB52002F0BC4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EC10D41029295FFF002C4B91 /* ViewModifiers */,
 				EC9DD75829290E0C002F0BC4 /* Fonts */,
 				EC9DD740292905A2002F0BC4 /* Locale */,
 				EC9DD7352928FAD5002F0BC4 /* Extensions */,
@@ -203,7 +224,6 @@
 		EC9DD7242928DB77002F0BC4 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
-				EC5D790429291D5F000B99B5 /* OnBoard */,
 				EC9DD7262928DB97002F0BC4 /* Authentication */,
 			);
 			path = Feature;
@@ -220,6 +240,8 @@
 		EC9DD7262928DB97002F0BC4 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				EC10D40D29293C6A002C4B91 /* Login */,
+				EC5D790429291D5F000B99B5 /* OnBoard */,
 				EC9DD7272928DBB8002F0BC4 /* Welcome */,
 			);
 			path = Authentication;
@@ -458,10 +480,12 @@
 				EC9DD74D292908ED002F0BC4 /* PagePaddings.swift in Sources */,
 				EC9DD75629290C87002F0BC4 /* EmailButton.swift in Sources */,
 				EC9DD6F82928DAD5002F0BC4 /* SnackOverFlowApp.swift in Sources */,
+				EC10D40F29293C87002C4B91 /* LoginView.swift in Sources */,
 				EC9DD73F292900A1002F0BC4 /* EdgeInsets.swift in Sources */,
 				EC9DD7342928F88A002F0BC4 /* Images.swift in Sources */,
 				EC9DD74F292909F3002F0BC4 /* Radius.swift in Sources */,
 				EC9DD75A29290E18002F0BC4 /* FontSizes.swift in Sources */,
+				EC10D41229296018002C4B91 /* TextFieldModifier.swift in Sources */,
 				EC5D790A29292696000B99B5 /* OnBoardModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
