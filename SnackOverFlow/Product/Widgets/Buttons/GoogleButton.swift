@@ -1,5 +1,5 @@
 //
-//  FacebookButton.swift
+//  GoogleButton.swift
 //  SnackOverFlow
 //
 //  Created by İsmail Ertuğlu on 19.11.2022.
@@ -9,7 +9,7 @@ import SwiftUI
 
 
 
-struct FacebookButton: View {
+struct GoogleButton: View {
     
     var onTap: () -> Void
     
@@ -19,23 +19,18 @@ struct FacebookButton: View {
             onTap()
         } label: {
             HStack{
-                Image(IconItems.Social.facebook.rawValue)
-                Text(LocaleKeys.Auth.facebook.rawValue.locale())
+                Image(IconItems.Social.google.rawValue)
+                Text(LocaleKeys.Auth.google.rawValue.locale())
                 Spacer()
-            }.tint(.white)
+            }.tint(.black)
                 .font(.title2)
                 .padding(PagePadding.All.normal.rawValue)
             
         }
             .buttonBorderShape(.roundedRectangle)
             .controlSize(.large)
-            .background(Color.deepSkyBlue)
+            .background(Color.white)
             .cornerRadius(RadiusItems.normalRadius)
             
     }
 }
-
-
-
-
-

@@ -13,19 +13,39 @@ struct WelcomeView: View {
             Image(Images.juice.rawValue).resizable()
             Color.dark30 // Kendi assets/colors içinde oluşturduğum renk Colors.black.opacity(0.3) de aynı şey
            
-            VStack{
-                Image(Icons.appLogo.rawValue)
-                FacebookButton(onTap:{}).padding(Edge.Set.top,40)
-            }.padding(.paddingAll) // declerated in extension
+            BodyView() // declerated in extension
         }
     }
 }
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeView().statusBar(hidden: true)
+        WelcomeView().ignoresSafeArea(.all)
     }
 }
 
 
+
+
+private struct BodyView: View {
+    var body: some View {
+        GeometryReader { geometry in
+            
+            VStack{
+                Spacer()
+                Image(Icons.appLogo.rawValue)
+                Spacer()
+                FacebookButton(onTap:{}).padding(Edge.Set.top,40)
+                GoogleButton(onTap: {})
+                AppleButton(onTap: {})
+                Divider().background(Color.peach)
+                    .frame(width: geometry.dw(width: 0.6) ,height: DividerViewSize.normal).padding(.all,PagePadding.All.normal.rawValue).foregroundColor(Color.peach)
+                EmailButton(onTap: {})
+                Spacer().frame(height: geometry.dh(height: 0.08))
+            }.padding(.paddingAll)
+            //Vstack Ending
+        }
+        
+    }
+}
 

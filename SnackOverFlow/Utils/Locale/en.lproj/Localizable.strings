@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  SnackOverFlow
+
+  Created by İsmail Ertuğlu on 19.11.2022.
+  
+*/
+
+"signInFacebook" = "Sign in with Facebook";
+"signInGoogle" = "Sign in with Google";
+"signInApple" = "Sign in with Apple";
+"signUpWithEmail" = "Sign Up with Email";
