@@ -20,4 +20,8 @@ struct IconItems{
         case apple = "ic_apple"
         case email = "ic_email"
     }
+    enum Login: String{
+        case mail = "ic_mail"
+        case lock = "ic_lock"
+    }
 }

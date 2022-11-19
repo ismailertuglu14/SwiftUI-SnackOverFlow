@@ -6,9 +6,20 @@
   
 */
 
+// WelcomeView Buttons
 "signInFacebook" = "Sign in with Facebook";
 "signInGoogle" = "Sign in with Google";
 "signInApple" = "Sign in with Apple";
 "signUpWithEmail" = "Sign Up with Email";
 
+// OnBoard
 "getStarted" = "Get started";
+
+// Login
+"welcomeBack" = "Welcome Back!";
+"createAccount" = "Create Account";
+"termsAndConditions" = "By clicking \"Create account\", I agree to SnackOverFlow's [TOS](https://www.google.com/?client=safari) and [Privacy Policy](www.google.com).";
+
+// General
+"emailHint" = "Write Your email";
+"passwordHint" = "Write your password";

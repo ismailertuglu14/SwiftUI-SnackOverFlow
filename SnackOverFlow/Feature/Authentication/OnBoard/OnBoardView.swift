@@ -45,7 +45,7 @@ struct OnBoardView: View {
                     
                 }.frame(height: geometry.dh(height: 0.015))
                 
-                
+                 
                 NormalButton(onTap: {}, title: LocaleKeys.Buttons.getStarted.rawValue).padding(.all,PagePadding.All.normal.rawValue)
             }
         })
