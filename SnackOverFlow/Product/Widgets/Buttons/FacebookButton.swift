@@ -35,6 +35,11 @@ struct FacebookButton: View {
     }
 }
 
+struct FacebookButton_Previews: PreviewProvider {
+    static var previews: some View {
+        FacebookButton(onTap: {})
+    }
+}
 
 
 
