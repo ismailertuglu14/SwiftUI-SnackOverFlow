@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OnBoardView: View {
-    @State private var currentIndex: Int = 0
+    @StateObject var onBoardViewModel = OnBoardViewModel()
     
     /// Dummy list count
     /// - Returns: It will return length of the list
@@ -17,38 +17,48 @@ struct OnBoardView: View {
     }
     var body: some View {
         
-        GeometryReader(content:{geometry in
-            
-            VStack{
-                Spacer()
+        NavigationView {
+            GeometryReader(content:{geometry in
                 
-                TabView(selection: $currentIndex,content:{
-                    ForEach((0...count()),id:\.self ,content: {value in
-                        SliderCard(model: OnBoardModel.items[value], imageHeight: geometry.dh(height: 0.45))
-                    })
-                  
-                }).tabViewStyle(.page(indexDisplayMode: .never))
-                   
-                Spacer()
-                
-                HStack{
+                VStack{
+                    Spacer()
                     
-                    ForEach((0...2),id:\.self,content: {index in
-                     
-                        if(index == currentIndex){
-                            IndicatorRectangle(width: geometry.dw(width: 0.1))
-                        }else{
-                            IndicatorRectangle(width: geometry.dw(width: 0.04))
-                        }
-                    })
+                    TabView(selection: $onBoardViewModel.currentIndex,content:{
+                        ForEach((0...count()),id:\.self ,content: {value in
+                            SliderCard(model: OnBoardModel.items[value], imageHeight: geometry.dh(height: 0.45))
+                        })
+                      
+                    }).tabViewStyle(.page(indexDisplayMode: .never))
+                       
+                    Spacer()
                     
+                    HStack{
+                        
+                        ForEach((0...2),id:\.self,content: {index in
+                         
+                            if(index == onBoardViewModel.currentIndex){
+                                IndicatorRectangle(width: geometry.dw(width: 0.1))
+                            }else{
+                                IndicatorRectangle(width: geometry.dw(width: 0.04))
+                            }
+                        })
+                        
+                        
+                    }.frame(height: geometry.dh(height: 0.015))
                     
-                }.frame(height: geometry.dh(height: 0.015))
-                
-                 
-                NormalButton(onTap: {}, title: LocaleKeys.Buttons.getStarted.rawValue).padding(.all,PagePadding.All.normal.rawValue)
-            }
-        })
+                    NavigationLink(isActive: $onBoardViewModel.isHomeRedirect){
+                        WelcomeView().ignoresSafeArea(.all) // Üst ve alttaki boşlukları kapatıyor
+                            .toolbar(.hidden)// Sol üstteki geri tuşunu kapatıyor
+                    } label: {
+                        NormalButton(onTap: {
+                            onBoardViewModel.saveUserLoginAndRedirect()
+                        }, title: LocaleKeys.Buttons.getStarted.rawValue).padding(.all,PagePadding.All.normal.rawValue)
+                    }.onAppear{
+                        onBoardViewModel.checkUserFirstTime()
+                    }
+                }
+            })
+        }
     }
 }
 
