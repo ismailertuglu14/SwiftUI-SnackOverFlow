@@ -6,6 +6,7 @@
 //
 
 import XCTest
+
 @testable import SnackOverFlow
 
 final class SnackOverFlowTests: XCTestCase {
@@ -31,6 +32,21 @@ final class SnackOverFlowTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testFetchUserAndCheck() async throws {
+        let manager = NetworkManager.networkManager
+        
+        do{
+            let userResponse = await manager.fetch(path: .users, method: .get, type: UserResponse.self)
+            XCTAssertEqual(userResponse?.data?.isEmpty, false)
+        }catch{
+            XCTFail("Service error \(error)")
+        }
+        
+        
+      
+        
     }
 
 }
